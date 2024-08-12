@@ -1,6 +1,9 @@
 const express = require('express');
+
 const path = require('path');
+
 const app = express();
+
 const port = 5000;
 
 // Middleware to check working hours
@@ -23,7 +26,7 @@ const checkWorkingHours = (req, res, next) => {
 // Apply middleware globally
 app.use(checkWorkingHours);
 
-// Serve static files (e.g., CSS, JS) from the views directory
+// Serve static files from the views directory
 app.use(express.static(path.join(__dirname, 'views')));
 
 // Define routes
